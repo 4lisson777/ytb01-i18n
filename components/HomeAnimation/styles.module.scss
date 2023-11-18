@@ -1,0 +1,303 @@
+.thingContainer {
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 1px solid var(--animationBorder);
+    position: relative;
+    z-index: 0;
+    animation: bgAnimation 1s forwards 1s, rotateAnimation 6s linear infinite 5s;
+    margin: 0;
+    justify-self: end;
+    opacity: 0;
+
+    >div {
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transform-origin: center;
+    }
+
+    &::after {
+        content: "";
+        display: block;
+        width: 240px;
+        height: 240px;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border: 1px solid var(--animationBorder);
+        animation: show 2s linear forwards 5s;
+        opacity: 0;
+    }
+
+    @media (max-width: 767px) {
+        width: 300px;
+        height: 300px;
+
+        &::after {
+            width: 180px;
+            height: 180px;
+        }
+    }
+
+    @media (max-width: 1024px) {
+        justify-self: center;
+    }
+}
+
+.js {
+    background-color: transparent;
+    color: var(--primary-blue);
+    z-index: 1;
+    opacity: 0;
+    animation: js 2s forwards 2s, show 2s forwards;
+
+    >svg {
+        animation: inverseRotate 6s linear infinite 5s;
+        filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 1));
+    }
+}
+
+.html {
+    background-color: transparent;
+    color: var(--primary-blue);
+    z-index: 2;
+    opacity: 0;
+    animation: html 2s forwards 2s, show 2s forwards;
+
+    >svg {
+        animation: inverseRotate 6s linear infinite 5s;
+        filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 1));
+    }
+}
+
+.css {
+    background-color: transparent;
+    color: var(--primary-blue);
+    z-index: 3;
+    opacity: 0;
+    animation: css 2s forwards 2s, show 2s forwards;
+
+    >svg {
+        animation: inverseRotate 6s linear infinite 5s;
+        filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 1));
+    }
+}
+
+.gulp {
+    background-color: transparent;
+    color: var(--black-icons);
+    z-index: 4;
+    opacity: 0;
+    animation: gulp 2s forwards 5s, show 2s forwards;
+
+    >svg {
+        animation: inverseRotate 6s linear infinite 5s;
+        filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 1));
+    }
+
+}
+
+.sass {
+    background-color: transparent;
+    color: var(--black-icons);
+    z-index: 4;
+    opacity: 0;
+    animation: sass 2s forwards 5s, show 2s forwards;
+
+    >svg {
+        animation: inverseRotate 6s linear infinite 5s;
+        filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 1));
+    }
+
+}
+
+.tailwind {
+    background-color: transparent;
+    color: var(--black-icons);
+    z-index: 4;
+    opacity: 0;
+    animation: tailwind 2s forwards 5s, show 2s forwards;
+
+    >svg {
+        animation: inverseRotate 6s linear infinite 5s;
+        filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 1));
+    }
+
+}
+
+.react {
+    background-color: transparent;
+    color: var(--primary-blue);
+    z-index: 5;
+    animation: react 5s linear infinite 5s;
+}
+
+.next {
+    background-color: var(--next-logo);
+    color: var(--black-icons);
+    z-index: 5;
+    animation: next 5s linear infinite 5s;
+}
+
+@keyframes bgAnimation {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes rotateAnimation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes inverseRotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+@keyframes show {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes js {
+    0% {
+        left: 50%;
+        top: 50%;
+    }
+
+    100% {
+        left: 14%;
+        top: 25%;
+        transform: translateX(-150%);
+    }
+}
+
+@keyframes html {
+    0% {
+        left: 50%;
+        top: 50%;
+    }
+
+    100% {
+        left: 86%;
+        top: 25%;
+        transform: translateX(50%);
+    }
+}
+
+@keyframes css {
+    0% {
+        top: 50%;
+    }
+
+    100% {
+        top: 100%;
+    }
+}
+
+@keyframes next {
+    0% {
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    60% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes react {
+    0% {
+        opacity: 1;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes gulp {
+    0% {
+        top: 50%;
+    }
+
+    100% {
+        top: 20%;
+    }
+}
+
+@keyframes sass {
+    0% {
+        left: 50%;
+        top: 50%;
+    }
+
+    100% {
+        left: 24%;
+        top: 70%;
+    }
+}
+
+@keyframes tailwind {
+    0% {
+        left: 50%;
+        top: 50%;
+    }
+
+    100% {
+        left: 74%;
+        top: 70%;
+    }
+}
